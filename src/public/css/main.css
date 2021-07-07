@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,400;1,100&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #efefef;
+  font-family: 'Raleway', sans-serif;
+}
+header{
+  
+  min-width: 300px;
+  position: relative;
+  background-attachment: fixed;
+}
+header h1 {
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  
+}
+header h4 {
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  
+}
+.figura{
+  position: fixed;
+  top: 380px;
+  width: 360px;
+  height: 40px;
+  border-left: 18rem solid rgb(122, 165, 122);
+  border-right: 18rem solid rgb(122, 165, 122);
+  border-top: 15px solid transparent;
+}
+.primera{
+  
+  width: 100%;
+  background-color: rgba(230, 230, 230, 0.973);
+}
+.tarjeta b{
+  font-size: large;
+}
+
+@media (max-width: 755.8px){
+  header{
+    background-image: linear-gradient(to right, hsla(46, 100%, 86%, 0.7), hsla(0, 0%, 100%, 0.78)), url('../img/shopping-2611645_1280.jpg');
+    background-size: cover;
+  }
+  .container-cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tarjeta{
+    min-width: 300px;
+    padding-top: 12%;
+    width: 280px;
+    height: 360px;
+    background-color: #202020;
+    margin: 6px;
+    text-align: center;
+    color: #7e7e7e;
+  }
+  .cabecera{
+    height: 500px;
+  }
+  .titulo{
+    height: 480px;
+  }
+}
+@media (min-width: 756px) and (max-width: 1199.6px){
+  header{
+    background-image: linear-gradient(to right, hsla(46, 100%, 86%, 0.7), hsla(0, 0%, 100%, 0.76)), url('../img/laptop-336373_1280.jpg');
+    background-size: cover;
+  }
+  .container-cards{
+    padding-top: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .tarjeta{
+    /*min-width: 300px;*/
+    padding-top: 30px;
+    background-color: #202020;
+    width: 320px;
+    text-align: center;
+    color: #7e7e7e;
+  }
+  .cabecera{
+    height: 400px;
+  }
+  .titulo{
+    height: 300px;
+  }
+}
+@media (min-width: 1200px){
+  header{
+    background-image: linear-gradient(to right, hsla(46, 100%, 86%, 0.7), hsla(0, 0%, 100%, 0.76)), url('../img/laptop-336373_1280.jpg');
+    background-size: cover;
+  }
+  .container-cards{
+    padding-top: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .tarjeta{
+    /*min-width: 300px;*/
+    padding-top: 40px;
+    background-color: #202020;
+    width: 320px;
+    text-align: center;
+    color: #7e7e7e;
+  }
+  .cabecera{
+    height: 512px;
+  }
+  .titulo{
+    height: 400px;
+  }
+}
+
