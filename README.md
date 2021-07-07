@@ -1,2 +1,2 @@
 # personal-page
-Este es un proyecto de prueba para GTI
+Este es un proyecto de prueba para GIT
