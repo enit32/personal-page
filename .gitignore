@@ -1,0 +1,5 @@
+node_modules/
+package-lock.json
+registro.log
+src/public/img/
+src/public/img/Thumbs.db

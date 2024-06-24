@@ -18,13 +18,13 @@ app.engine('.hbs', handlebars({
     partialsDir: `${__dirname}/src/views/partials`,
     extname: '.hbs',
     helpers: require('./src/lib/handlebars')
-}));
+})); 
 app.set('view engine', '.hbs'); 
 app.use(morgan('common', {stream: registroAcceso}));
 
 //publicos
 app.use(express.static(__dirname + '/src/public'));
-
+ 
 //rutas
 app.use('/', rutas);
 
