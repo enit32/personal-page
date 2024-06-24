@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res)=>{
-    res.render('principal/index.hbs');
+    res.render('partials/index');
 });
 
 router.get('/venta', (req, res)=>{
-    res.render('venta/venta.hbs');
+    res.render('partials/venta');
 });
 
 module.exports = router;
