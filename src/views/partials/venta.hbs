@@ -4,35 +4,45 @@
   
     <div class="row">
       <div class="col-xl-3 cajas">
-        <div class="card text-center m-1 text-white bg-dark border-danger">
-          <div class="card-header">
-            Featured
+
+        {{> rellenar_caja}}
+
+      </div>
+      <div class="col-xl-6 cajas">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="..." class="d-block w-100" alt="...">
           </div>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-danger">Go somewhere</a>
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
           </div>
-          <div class="card-footer text-muted">
-            2 days ago
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
           </div>
         </div>
-        
-        <img src="img/caja.png" class="rounded mx-auto d-block" srcset="">
-      </div>
-    <div class="col-xl-6">
-      <div class="row cuadro_de_control">
-        {{> rellenar_caja}}
-      </div>
-      <div class="row">
-        <ol id="canasta" class="list-group list-group-numbered">
-  
-        </ol>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+
+         
+        <div class="row cuadro_de_control">
+          
+        </div>
+        <div class="row">
+          <ol id="canasta" class="list-group list-group-numbered">
+          </ol>
       </div>   
-    </div>
-    <div class="col-xl-3">
-      Column
-    </div>
+      </div>
+      <div class="col-xl-3 cajas">
+        Column
+      </div>
   </div>
   
 </div>

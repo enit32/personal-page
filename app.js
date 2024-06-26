@@ -11,6 +11,8 @@ var registroAcceso = fs.createWriteStream(path.join(__dirname, 'registro.log'), 
 const app = express();
 
 //Configuraciones
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 app.set('views', path.join(__dirname, 'src/views'))
 app.engine('.hbs', handlebars({
     defaultLayout: 'main',

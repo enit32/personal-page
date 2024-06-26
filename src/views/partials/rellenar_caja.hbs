@@ -1,4 +1,65 @@
-        <div class="input-group mb-3">
-          <input autofocus id="codigo" type="text" class="form-control" placeholder="codigo de barras" aria-label="Recipient's username" aria-describedby="basic-addon2">
-          <!--span class="input-group-text" id="basic-addon2">@example.com</span-->
+<div class="card text-center m-1 text-white bg-dark border-danger">
+          <div class="card-header">
+            Featured
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-danger">Go somewhere</a>
+          </div>
+          <div class="card-footer text-muted">
+            2 days ago
+          </div>
+</div>
+
+<div id="form-incluir" class="card incluir">
+  
+  <div class="input-group mb-3">
+    <div class="input-group">
+      <input autofocus id="codigo" type="text" class="form-control" placeholder="codigo de barras" aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <button id="btn-agregar" class="btn btn-outline-primary" type="button">Agregar</button>
+      <button class="btn btn-outline-secondary" type="button">Gen</button>
+    </div>
+  </div>
+  <img id="cajapng" src="img/caja.png" class="rounded mx-auto d-block card-img-top" srcset="">
+</div>
+
+<div id="form-agregar" class="card agregar visually-hidden">
+        <div class="card-body">
+            
+            <div class="form-group">
+                    <input id="codigo-nuevo" type="text" name="titulo" class="form-control" placeholder="Código de barras" autofocus>
+                </div>
+                <div class="form-group">
+                     <input type="url" name="url" id="" class="form-control" placeholder="Aquí escribe tu Zelda">   
+                </div>
+                <div class="form-group">
+                    <textarea name="descripcion" rows="3" class="form-control" placeholder="Ah, va xd ¿Y pa' que sirve tu zelda?"></textarea>
+                </div>
+                <div class="form-group">
+                    <button id="btn-incluir" class="btn btn-success btn-block">
+                        Andale ps, guardalo.
+                    </button>
+                </div>
         </div>
+</div>
+
+
+
+<div class="position-fixed bottom-0 end-900 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <svg class="bd-placeholder-img rounded me-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" 
+      aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <rect width="100%" height="100%" fill="#007aff">
+        </rect>
+      </svg>
+      <strong class="me-auto">Alerta</strong>
+      <small>Importante</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Ya esta guardado este codigo de barras
+    </div>
+  </div>
+</div>

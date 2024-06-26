@@ -10,18 +10,25 @@ body{
         ),*/
     url("../img/c7d9a1bd5ca0d138893216a272a0145b.jpg");
     min-height: 748px;
-    
-    
+    position: relative;
 }
-.cajas img{
-    margin-top: 60px;
-    width: 228px;
+#cajapng{
+    margin-top: 33px;
+    margin-bottom: 33px;
+    width: 128px;
     transform-style: preserve-3d;
 	animation: animate 3.1s linear infinite;
 }
-
 .cuadro_de_control{
-    min-height: 228px;
+    min-height: 128px;
+    display: flex;
+}
+.agregar{
+   
+    position: absolute;
+    top: 295px;
+    right: 36px;
+    border: 3px solid #73AD21;
 }
 
 @keyframes animate{
