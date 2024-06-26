@@ -1,41 +1,4 @@
-[{
-    "id": 1,
-    "cantidad": 70,
-    "precio": 25,
-    "producto": "foco" 
-}, {
-    "id": 45,
-    "cantidad": 66,
-    "precio": 38,
-    "producto": "foco 7w" 
-},
-{
-    "id": 2,
-    "cantidad": 42,
-    "precio": 70,
-    "producto": "cautin" 
-},
-{
-    "id": 3,
-    "cantidad": 3,
-    "precio": 2500,
-    "producto": "taladro"
-},
-{
-    "id": 4,
-    "cantidad": 700,
-    "precio": 4,
-    "producto": "fusible"
-},
-{
-    "id": 7503040008430,
-    "cantidad": 20,
-    "precio": 44,
-    "producto": "corrector liquido 02 alfajor"
-},
-{
-    "id": 7501206641675,
-    "cantidad": 70,
-    "precio": 10,
-    "producto": "cinta teflón truper"
-}]
+[{"id":7501206641675,"cantidad":70,"precio":10,"producto":"cinta teflón truper"},
+{"id":"7506198192754","cantidad":1,"precio":40,"producto":"Foco para refrigerador 40w 127v AKSI"},
+{"id":"7506287600825","cantidad":1,"precio":100,"producto":"Foco incandescente negro 75w 127v "},
+{"id":7506240636335,"cantidad":1,"precio":50,"producto":"Gas butano para encendedores"}]

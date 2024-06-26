@@ -1,4 +1,4 @@
-var mensaje = document.getElementById("liveToast");
+
 console.log(JSON.stringify(new Date(2006, 0, 2, 15, 4, 5)));
 
 function confirmarcodigo(codigo){
@@ -7,10 +7,7 @@ function confirmarcodigo(codigo){
     if(productos[index].id == codigo){
         //console.log(productos[index]);
         //agregar(productos[index]);
-        mensaje.className = "toast show";
-        setTimeout(() => {
-          mensaje.className = "toast hide";
-        }, "2000");
+        permitirNuevo(!encontrado);
         encontrado = true;
     }  
   }
@@ -23,9 +20,10 @@ function confirmarcodigo(codigo){
 function guardarproducto(nObjeto, usuario){
   //id, cantidad, precio, producto
   const cuerpo = JSON.stringify({
-    id: nObjeto.id,
+    id: nObjeto.codigo,
     cantidad: nObjeto.cantidad,
     precio: nObjeto.precio,
+    producto: nObjeto.producto,
   });
   var miInicializador = {
     method: "POST",
@@ -44,10 +42,10 @@ function guardarproducto(nObjeto, usuario){
   const myCred = myRequest.credentials; // omit
   const bodyUsed = myRequest.bodyUsed; // true
   
-  console.log(myURL);
-  console.log(myMethod);
-  console.log(myCred);
-  console.log(bodyUsed);
+  //console.log(myURL);
+  //console.log(myMethod);
+  //console.log(myCred);
+  //console.log(bodyUsed);
   
   return myRequest;
   
@@ -72,7 +70,7 @@ function consultarcodigo(codigo){
   const myCred = myRequest.credentials; // omit
   const bodyUsed = myRequest.bodyUsed; // true
   
-  console.log(myURL);
+  //console.log(myURL);
   //console.log(myMethod);
   //console.log(myCred);
   //console.log(bodyUsed);
@@ -82,21 +80,22 @@ function consultarcodigo(codigo){
     .then((response) => {
       if (response.status === 200) {
         //console.dir(response.json());
-        console.log(response.status);
+        //console.log(response.status);
         return response.json();
       } else {
         throw new Error("Algo anda mal con el servidor");
       }
     })
     .then((response) => {
-      console.dir(response);
+      //console.dir(response);
       //var cadenajson = JSON.stringify(response);
       var respuesta = JSON.parse(response);
       console.log(respuesta.codigo);
-      mensaje.className = "toast show";
-      setTimeout(() => {
-        mensaje.className = "toast hide";
-      }, "2000");
+      if(respuesta.codigo == 0){
+        permitirNuevo(true);
+      }else{
+        permitirNuevo(false);
+      }
       /*if(response == codigo){
         return true;
       }*/
@@ -109,7 +108,7 @@ function consultarcodigo(codigo){
 }
 
 function solicitarproductos(codigo){
-  console.log(codigo);
+  //console.log(codigo);
   const cuerpo = JSON.stringify({
     id: codigo
   });
@@ -130,10 +129,10 @@ function solicitarproductos(codigo){
   const myCred = myRequest.credentials; // omit
   const bodyUsed = myRequest.bodyUsed; // true
   
-  console.log(myURL);
-  console.log(myMethod);
-  console.log(myCred);
-  console.log(bodyUsed);
+  //console.log(myURL);
+  //console.log(myMethod);
+  //console.log(myCred);
+  //console.log(bodyUsed);
   
   return myRequest;
 }

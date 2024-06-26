@@ -16,44 +16,50 @@ controlador.agregar = (req, res) =>{
             }
         });
     });*/
-    console.log(req.body);
+    //console.log(req.body);
     try {
         const datos = fs.readFileSync('./file.json', { encoding: "utf-8" });
-        console.log(datos);
-        const json = datos + 
-        `
-        `+ JSON.stringify(req.body);
+        
+        var json = JSON.parse(datos);
+        var cont = json.push(req.body);
+        //console.log(json);
         
         try {
-          fs.writeFileSync('./file.json', json);
+          fs.writeFileSync('./file.json', JSON.stringify(json));
         } catch (err) {
           throw err;
         }
+        res.json('{"incluidos": '+ cont +' }');
     } catch (err) {
       throw err;
     }
     
-    res.json('{1:"no"}');
+    
 }
 
 controlador.consultar = (req, res) =>{
+    var encontrado = false;
     const datos = fs.readFileSync('./file.json', { encoding: "utf-8" });
     //console.log(JSON.parse(datos));
     productos = JSON.parse(datos);
+
     for (let index = 0; index < productos.length; index++) {
         if(productos[index].id == req.body.codigo){
             //console.log(productos[index]);
             //console.log('');
             var json = JSON.stringify({"codigo": req.body.codigo});
+            encontrado = true;
             res.json(json);
         }  
     }
+    if(encontrado == false){
+        res.json('{"codigo": 0}');
+    }
     //console.log(req.body.codigo);
-    //res.json('{"codigo": 9}');
 }
 
 controlador.solicitar = (req, res) =>{
-    console.log(req.body);
+    //console.log(req.body);
     const datos = fs.readFileSync('./file.json', { encoding: "utf-8" });
     productos = JSON.parse(datos);
     for (let index = 0; index < productos.length; index++) {
@@ -61,12 +67,14 @@ controlador.solicitar = (req, res) =>{
             //console.log(productos[index]);
             //console.log('');
             var json = productos[index];
-            console.log(json);
+            //console.log(json);
             res.json(json);
         }  
     }
     //res.json({});
     //res.json(datos);
 }
+
+
 
 module.exports = controlador;

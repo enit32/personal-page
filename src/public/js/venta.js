@@ -2,15 +2,44 @@
 var btnAgregar = document.getElementById("btn-agregar");
 var btnIncluir = document.getElementById("btn-incluir");
 var codNuevo = document.getElementById("codigo-nuevo");
+var preNuevo = document.getElementById("precio-nuevo");
+var prodNuevo = document.getElementById("producto-nuevo");
+var btnCerrar = document.getElementById("btn-cerrar");
+var permitir = false;
 
 btnAgregar.addEventListener("click", function(){
     AgregarIncluir("mostrar")
     
 });
 btnIncluir.addEventListener("click", function(){
-    AgregarIncluir("esconder");
-    /*
-    fetch(myRequest)
+  var productoNuevo = {}
+  var agregar = false;
+  if(permitir){
+    agregar = true;
+  }
+  if(!codNuevo.value){
+    codNuevo.className = "form-control is-invalid";
+    agregar = false;
+  }
+  if(!preNuevo.value){
+    preNuevo.className = "form-control is-invalid";
+    agregar = false;
+  }
+  if(!prodNuevo.value){
+    prodNuevo.className = "form-control is-invalid";
+    agregar = false;
+  }
+  
+
+  if(agregar){
+    preNuevo.className = "form-control";
+    prodNuevo.className = "form-control";
+    productoNuevo.codigo = parseInt(codNuevo.value);
+    productoNuevo.cantidad = 1;
+    productoNuevo.precio = parseInt(preNuevo.value);
+    productoNuevo.producto = prodNuevo.value;
+    
+    fetch(guardarproducto(productoNuevo))
     .then((response) => {
       if (response.status === 200) {
         return response.json();
@@ -20,12 +49,26 @@ btnIncluir.addEventListener("click", function(){
     })
     .then((response) => {
       console.log(response);
+      codNuevo.value = "";
+      preNuevo.value = "";
+      prodNuevo.value = "";
+      AgregarIncluir("esconder");
       // ...
     })
     .catch((error) => {
       console.error(error);
-    });*/
+    });
+    
+    
+  }else{
+    console.log("tefaltalgo")
+  }
+
 });
+
+btnCerrar.addEventListener('click', function () {
+  AgregarIncluir("esconder");
+})
 
 document.addEventListener("keyup", function(event){
     if(event.key === "Enter"){
@@ -40,7 +83,7 @@ document.addEventListener("keyup", function(event){
         }
         if(encontrado == false){
         
-          console.log(solicitarproductos(document.getElementById("codigo").value));
+          //console.log(solicitarproductos(document.getElementById("codigo").value));
             fetch(solicitarproductos(document.getElementById("codigo").value))
           .then((response) => {
             
@@ -118,6 +161,25 @@ function AgregarIncluir(accion){
         agregar.className = "card agregar visually-hidden";
     }
 
+}
+
+function permitirNuevo(T){
+  var mensaje = document.getElementById("liveToast");
+  var codbarras = document.getElementById("codigo-nuevo");
+
+  if(T){
+    btnIncluir.className = "btn btn-success btn-block";
+    codbarras.className = "form-control";
+    permitir = true;
+  }else{
+    btnIncluir.className = "btn btn-light btn-block";
+    codbarras.className = "form-control is-invalid";
+    mensaje.className = "toast show";
+    setTimeout(() => {
+      mensaje.className = "toast hide";
+    }, "2800");
+    permitir = false;
+  }
 }
 
 JsBarcode(".codigobarras", "00001", {
