@@ -7,11 +7,13 @@ var prodNuevo = document.getElementById("producto-nuevo");
 var btnCerrar = document.getElementById("btn-cerrar");
 var inputCodigo = document.getElementById("codigo");
 var permitir = false;
+var canasta = [];
 
 btnAgregar.addEventListener("click", function(){
     AgregarIncluir("mostrar")
     
 });
+
 btnIncluir.addEventListener("click", function(){
   var productoNuevo = {}
   var agregar = false;
@@ -133,7 +135,9 @@ codNuevo.addEventListener("change", function(event){
   confirmarcodigo(event.target.value);
 });
 
-
+function cerrarCanasta(){
+  
+}
 
 function agregar(producto) {
     if(document.getElementById("A" + producto.id)){ //para evitar agregar doble

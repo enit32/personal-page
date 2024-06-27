@@ -1,0 +1,298 @@
+:root {
+  --rojito: #E50914;
+  --fondo: #141414;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: var(--fondo);
+ 
+}
+.contenedor {
+  width: 90%;
+  margin: auto;}
+header {
+  
+  padding: 30px 0;
+}
+header .contenedor{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo{
+  font-family: verdana;
+  font-size: 40px;
+  color: var(--rojito);
+}
+.fondo {
+    width: 90%;
+    margin: auto;
+    background: linear-gradient(rgba(0,0,0, .50) 0%, rgba(0,0,0, .5) 100%);
+    display: flex;
+    z-index: 500;
+    position:relative;
+}
+.portada-estilo{
+ width:100%;
+ 
+}
+.fany{
+ position: absolute;
+ align-items: end;
+ color: azure;
+ font-size: 18;
+ font-family: 'Cedarville Cursive', cursive;
+}
+.elestilo{
+    margin: 15px;
+    text-align: right;
+    color:azure;
+    font-size: small;
+}
+
+header nav a{
+  font-family: 'GIVE YOU GLORY';
+  color: #aaa;
+  text-decoration: none;
+  margin-right: 15px;
+}
+header nav a:hover,
+header nav a.activo{
+  color: white;
+  font-size: 26px;
+}
+
+
+
+.img-principal {
+    font-size: 16px;
+    min-height: 40.62em;
+    color: #fff;
+    background: linear-gradient(rgba(0,0,0, .5) 0%, rgba(0,0,0, .5) 100%), url(img/portada.jpg);
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 3.12em;
+    display: flex;
+    align-content: end;
+}
+
+.img-principal .contenedor{
+    
+    margin-bottom: 6.25em;
+}
+.img-principal .título{
+    font-weight: 600;
+    font-size: 3.12em;
+    margin-bottom: 0.4em;
+}
+.img-principal .descripcion{
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em;
+    max-width: 50%;
+    margin-bottom: 1.25em;
+}
+.img-principal .boton{
+    background: rgba(1,8,66, .6);
+    border: none;
+    border-radius: 0.35em;
+    padding: 0.93em 1.87em;
+    margin-right: 1.25em;
+    color: #fff;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1.12em;
+}
+.img-principal .boton2{
+    background: rgba(1,8,40, .6);
+    border: none;
+    border-radius: 0.35em;
+    padding: 0.93em 1.87em;
+    margin-right: 1.25em;
+    color: aliceblue;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1.12em;
+}
+.img-principal i{
+    margin-right: 1.2em;
+}
+.img-principal .boton:hover{
+    background: #fff;
+    color:indigo;
+}
+/* --titulo del carrusel y controles-- */
+.cinta-titulo-ind{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    background-color: #d2cbbb;
+}
+
+.cinta-titulo-ind h3{
+    margin-left: 5px;
+    color: #0e0c0c;
+    font-size: 12px;
+}
+
+.cinta-titulo-ind .indicadores button{
+    background: #fff;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-left: 2px;
+}
+.cinta-titulo-ind .indicadores button:hover, .cinta-titulo-ind .indicadores button.activo{
+ 
+    background: var(--rojito);
+} 
+
+    
+    
+
+
+/* ----Cinta de imagenes---- */
+
+.cinta{
+    margin-bottom: 0px;
+    padding: 1px;
+}
+.cinta-botones{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.cinta-botones .izquierda{
+    position: absolute;
+    border: none;
+    background: rgba(15,255,200, .2);
+    font-size: 40px;
+    height: 50%;
+    line-height: 40px;
+    width: 50px;
+    top: calc(50% - 25%);
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;
+}
+.cinta-botones .derecha{
+    position:absolute;
+    border: none;
+    background: rgba(15,255,255, .2);
+    font-size: 40px;
+    height: 50%;
+    line-height: 40px;
+    width: 50px;
+    top: calc(50% - 25%);
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;
+    right: 0;
+}
+.izquierda:hover, .derecha:hover{
+    background: rgba(15,255,255, .6);
+    color:aquamarine;
+}
+
+/* --pa las imagenes-- */
+.cinta .contenedor-cinta{
+    width: 100%;
+    padding: 2px 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+.cinta .contenedor-cinta .carrusel{
+    margin-top: 7px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.cinta .contenedor-cinta .carrusel .imagenes-cinta{
+    margin-left: 3px;
+    min-width: 12%;
+    max-width: 75px;
+    transition: .2s ease all;
+    box-shadow: 5px 5px 10px .3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cinta .contenedor-cinta .carrusel .imagenes-cinta a{
+    text-decoration: none;
+}
+.cinta .contenedor-cinta .carrusel .imagenes-cinta img{
+    height: 70px;
+    width: 100%;
+    vertical-align: top;
+    background-size: cover;
+}  
+.cinta .contenedor-cinta .carrusel .imagenes-cinta p{
+    margin-top: 9px;
+    overflow: hidden;
+    width: 70px;
+    height: 70px;
+    background-color: #d2cbbb;
+    font-size: medium;
+    color: #0e0c0c;
+    text-align: center;
+}
+/* .cinta .contenedor-cinta .carrusel .imagenes-cinta
+*/
+.hover{
+    transform: scale(1.2);
+    transform-origin: center;
+}
+    
+
+/* ---para hacer adaptable la página--*/
+
+@media screen and (max-width: 800px){
+    header .logo{
+        margin-bottom: 10px;
+		color: white;
+		font-family: Cedarville, Consolas, monospace;
+    }
+    header .contenedor{ 
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .img-principal{
+        font-size: 13px;
+    }
+    .img-principal .descripcion{
+        max-width: 80%;
+    }
+ /*  .cinta .contenedor-cinta{
+        overflow: visible;
+    }
+    .cinta .contenedor-cinta .carrusel{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    .indicadores, .izquierda, .derecha{
+        display: none;
+    } */
+}
+
+    
+ 
+   .grill-img .contenedor-cinta{
+        overflow: visible;
+    }
+    .grill-img .contenedor-cinta .carrusel{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    /* .indicadores, .izquierda, .derecha{
+        display: none;
+    } */
+

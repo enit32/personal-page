@@ -21,7 +21,12 @@ body{
 }
 .cuadro_de_control{
     min-height: 128px;
+    max-height: 260px;
     display: flex;
+    overflow-y: scroll;
+}
+.canasta{
+    min-height: 488px;
 }
 .agregar{
    
