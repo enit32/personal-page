@@ -60,6 +60,7 @@ controlador.consultar = (req, res) =>{
 
 controlador.solicitar = (req, res) =>{
     //console.log(req.body);
+    var encontrado = false;
     const datos = fs.readFileSync('./file.json', { encoding: "utf-8" });
     productos = JSON.parse(datos);
     for (let index = 0; index < productos.length; index++) {
@@ -69,9 +70,10 @@ controlador.solicitar = (req, res) =>{
             var json = productos[index];
             //console.log(json);
             res.json(json);
+            encontrado = true;
         }  
     }
-    //res.json({});
+    if(!encontrado) res.json({"id": 0});
     //res.json(datos);
 }
 

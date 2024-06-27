@@ -5,6 +5,7 @@ var codNuevo = document.getElementById("codigo-nuevo");
 var preNuevo = document.getElementById("precio-nuevo");
 var prodNuevo = document.getElementById("producto-nuevo");
 var btnCerrar = document.getElementById("btn-cerrar");
+var inputCodigo = document.getElementById("codigo");
 var permitir = false;
 
 btnAgregar.addEventListener("click", function(){
@@ -52,7 +53,11 @@ btnIncluir.addEventListener("click", function(){
       codNuevo.value = "";
       preNuevo.value = "";
       prodNuevo.value = "";
+      preNuevo.className = "form-control";
+      prodNuevo.className = "form-control";
+      codNuevo.className = "form-control";
       AgregarIncluir("esconder");
+      inputCodigo.focus();
       // ...
     })
     .catch((error) => {
@@ -68,19 +73,25 @@ btnIncluir.addEventListener("click", function(){
 
 btnCerrar.addEventListener('click', function () {
   AgregarIncluir("esconder");
+  inputCodigo.focus();
 })
 
-document.addEventListener("keyup", function(event){
+inputCodigo.addEventListener("keyup", function(event){
     if(event.key === "Enter"){
         //const count = productos.push(); console.log(count);
         var encontrado = false;
-        for (let index = 0; index < productos.length; index++) {
-          if(productos[index].id == document.getElementById("codigo").value){
-              //console.log(productos[index]);
-              agregar(productos[index]);
-              var encontrado = true;
-          }  
+        console.log("solicitando " + inputCodigo.value);
+        if(inputCodigo.value == "") encontrado = true;
+        if(!encontrado){
+          for (let index = 0; index < productos.length; index++) {
+            if(productos[index].id == document.getElementById("codigo").value){
+                //console.log(productos[index]);
+                agregar(productos[index]);
+                var encontrado = true;
+            }  
+          }
         }
+        
         if(encontrado == false){
         
           //console.log(solicitarproductos(document.getElementById("codigo").value));
@@ -95,10 +106,15 @@ document.addEventListener("keyup", function(event){
             }
           })
           .then((response) => {
+            //console.log()
+            if(response.id == 0){
+
+            }else{
+              var tamaño = productos.push(response);
+              console.log(productos);
+              agregar(productos[tamaño - 1]);
+            }
             
-            var tamaño = productos.push(response);
-            console.log(productos);
-            agregar(productos[tamaño - 1]);
           })
           .catch((error) => {
             console.error(error);

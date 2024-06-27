@@ -7,7 +7,7 @@ function confirmarcodigo(codigo){
     if(productos[index].id == codigo){
         //console.log(productos[index]);
         //agregar(productos[index]);
-        permitirNuevo(!encontrado);
+        permitirNuevo(encontrado);
         encontrado = true;
     }  
   }
